@@ -54,6 +54,8 @@ function generarPDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
+    let empresa = "PresuShot Pro";
+
     let clientes = document.getElementById("nombreClientes").value;
     let boda = document.getElementById("precioBoda").value;
     let dron = document.getElementById("precioDron").value;
@@ -66,8 +68,14 @@ function generarPDF() {
     doc.rect(0, 0, 210, 30, "F");
 
     doc.setTextColor(255, 255, 255);
+    doc.setFontSize(14);
+    doc.text(empresa, 20, 15);
+
     doc.setFontSize(18);
-    doc.text("PRESUPUESTO FOTOGRAFÍA", 20, 20);
+    doc.text("PRESUPUESTO FOTOGRAFÍA", 20, 25);
+
+    doc.setDrawColor(200);
+    doc.line(20, 32, 190, 32);
 
     // RESET COLOR
     doc.setTextColor(0, 0, 0);
@@ -90,9 +98,11 @@ function generarPDF() {
     doc.text("Álbum: " + album + " €", 20, 110);
 
     // TOTAL DESTACADO
-    doc.setFontSize(16);
+    doc.setFontSize(18);
     doc.setFont(undefined, "bold");
-    doc.text("TOTAL: " + total + " €", 20, 135);
+    doc.setTextColor(0, 0, 0);
+
+    doc.text("TOTAL FINAL: " + total + " €", 20, 135);
 
     // PIE
     doc.setFontSize(10);
@@ -204,3 +214,8 @@ function eliminarPresupuesto(index) {
     mostrarHistorial(historial);
 }
 
+doc.setFontSize(10);
+doc.setFont(undefined, "normal");
+doc.setTextColor(120);
+
+doc.text("Documento generado automáticamente por " + empresa, 20, 165);
