@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>PresuShot</title>
+
+            <link rel="stylesheet" href="style.css">
+        </head>
+
+
+        <body>
+
+            <div class="container">
+
+            <div class="header">
+                 <h1>PresuShot Pro 📸</h1>
+                    <p>Presupuestos rápidos para fotógrafos de boda</p>
+            </div>
+
+            <h2>Nuevo presupuesto</h2>
+
+            <label>Nombre de los novios</label>
+            <input type="text" id="nombreClientes">
+
+            <label>Fecha de la boda</label>
+            <input type="date">
+
+            <label>Precio boda</label>
+            <input type="number" id="precioBoda">
+
+            <label>Extra dron</label>
+            <input type="number" id="precioDron">
+
+            <label>Álbum</label>
+            <input type="number" id="precioAlbum">
+
+
+            <button class="btn-primary" onclick="calcularTotal()">
+            Generar presupuesto
+            </button>
+
+            <br><br>
+
+            <button class="btn-secondary" onclick="generarPDF()">
+            Descargar PDF
+            </button>
+
+            <br><br>
+
+            <button class="btn-whatsapp" onclick="enviarWhatsApp()">
+            Enviar WhatsApp
+            </button>
+
+            <div id="resultado"></div>
+
+            <h2>Historial de presupuestos</h2>
+            <div id="historial"></div>
+
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+            <script src="script.js"></script>
+
+            </div>
+
+        </body>
+</html>

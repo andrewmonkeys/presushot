@@ -1,0 +1,162 @@
+body {
+
+    font-family: Arial;
+
+    background-color: #f4f4f4;
+
+    display: flex;
+
+    justify-content: center;
+
+    padding-top: 50px;
+
+}
+
+.container {
+
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    width: 450px;
+
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+
+}
+
+h1 {
+
+    text-align: center;
+
+}
+
+input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 5px;
+
+    margin-bottom: 15px;
+
+    border-radius: 8px;
+
+    border: 1px solid #ccc;
+
+    box-sizing: border-box;
+
+}
+
+button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 10px;
+
+    background-color: black;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+}
+
+button:hover {
+
+    background-color: #333;
+
+}
+
+#resultado {
+
+    background-color: #fafafa;
+
+    padding: 20px;
+
+    margin-top: 30px;
+
+    border-radius: 10px;
+
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #444;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid black;
+}
+
+.btn-primary {
+    background-color: black;
+}
+
+.btn-secondary {
+    background-color: #555;
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin-bottom: 5px;
+}
+
+.header p {
+    color: #777;
+    font-size: 14px;
+    margin-top: 0;
+}
+
+.container {
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    input {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+}
