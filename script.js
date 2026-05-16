@@ -61,39 +61,47 @@ function generarPDF() {
 
     let total = Number(boda) + Number(dron) + Number(album);
 
-    // TÍTULO
-    doc.setFontSize(20);
+    // CABECERA
+    doc.setFillColor(0, 0, 0);
+    doc.rect(0, 0, 210, 30, "F");
+
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(18);
     doc.text("PRESUPUESTO FOTOGRAFÍA", 20, 20);
 
-    // LÍNEA
-    doc.setLineWidth(0.5);
-    doc.line(20, 25, 190, 25);
+    // RESET COLOR
+    doc.setTextColor(0, 0, 0);
 
     // INFO CLIENTE
     doc.setFontSize(12);
-    doc.text("Cliente: " + clientes, 20, 40);
+    doc.text("Cliente: " + clientes, 20, 45);
+    doc.text("Fecha: " + new Date().toLocaleDateString(), 20, 55);
 
-    doc.text("Fecha de emisión: " + new Date().toLocaleDateString(), 20, 50);
+    // LINEA SEPARADORA
+    doc.line(20, 60, 190, 60);
 
-    // SERVICIOS
+    // DETALLE
     doc.setFontSize(14);
-    doc.text("Detalle del presupuesto", 20, 70);
+    doc.text("Detalle del presupuesto", 20, 75);
 
     doc.setFontSize(12);
-    doc.text("Fotografía boda: " + boda + " €", 20, 85);
-    doc.text("Extra dron: " + dron + " €", 20, 95);
-    doc.text("Álbum: " + album + " €", 20, 105);
+    doc.text("Fotografía boda: " + boda + " €", 20, 90);
+    doc.text("Extra dron: " + dron + " €", 20, 100);
+    doc.text("Álbum: " + album + " €", 20, 110);
 
-    // TOTAL
+    // TOTAL DESTACADO
     doc.setFontSize(16);
-    doc.text("TOTAL: " + total + " €", 20, 130);
+    doc.setFont(undefined, "bold");
+    doc.text("TOTAL: " + total + " €", 20, 135);
 
     // PIE
     doc.setFontSize(10);
-    doc.text("Gracias por confiar en nosotros", 20, 150);
+    doc.setFont(undefined, "normal");
+    doc.text("Gracias por confiar en nosotros", 20, 155);
 
     doc.save("presupuesto.pdf");
 }
+
 
 
 function enviarWhatsApp() {
