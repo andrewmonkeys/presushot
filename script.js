@@ -1,3 +1,25 @@
+
+
+
+
+function generarTextoIA(tipo, precio) {
+
+    if (tipo === "boda") {
+        return "Cobertura completa de boda con edición profesional";
+    }
+
+    if (tipo === "dron") {
+        return "Tomas aéreas cinematográficas con drone 4K";
+    }
+
+    if (tipo === "album") {
+        return "Álbum físico premium con selección de 150 fotos";
+    }
+
+    return "Servicio fotográfico profesional";
+}
+
+
 function calcularTotal() {
 
     let clientes =
@@ -93,9 +115,9 @@ function generarPDF() {
     doc.text("Detalle del presupuesto", 20, 75);
 
     doc.setFontSize(12);
-    doc.text("Fotografía boda: " + boda + " €", 20, 90);
-    doc.text("Extra dron: " + dron + " €", 20, 100);
-    doc.text("Álbum: " + album + " €", 20, 110);
+    doc.text(generarTextoIA("boda", boda) + " - " + boda + " €", 20, 90);
+    doc.text(generarTextoIA("dron", dron) + " - " + dron + " €", 20, 100);
+    doc.text(generarTextoIA("album", album) + " - " + album + " €", 20, 110);
 
     // TOTAL DESTACADO
     doc.setFontSize(18);
